@@ -1,0 +1,65 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<MvcTatilSeyahat.Models.Sınıflar.Blog>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Blog Sayfası</title>
+    <link href="~/webblog/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/webblog/css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!----webfonts---->
+</head>
+<body>
+    <!---header---->
+    <!--/header-->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-8 single-main">
+                @foreach (var x in Model)
+                {
+                    <div class="single-grid">
+                        <img src="@x.BLOGIMAGE" alt="" style="margin-bottom:10px;" />
+                        <a href="/Blog/BlogDetay/ @x.ID"><b> @x.BASLIK </b></a>
+                        <p>
+                            @x.ACIKLAMA.Substring(0, 200)...<a href="/Blog/BlogDetay/@x.ID">Devamını Oku</a>
+                        </p>
+                    </div>
+                }
+                @Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
+            </div>
+            <div class="col-md-4 side-content">
+                @Html.Action("SonYazılar", "Blog")
+                @Html.Action("SonYorumlar", "Blog")
+            </div>
+        </div>
+    </div>
+    @*@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }),new PagedListRenderOptions {
+
+            LiElementClasses=new List<string>
+            {"page-link" }
+        })*@
+
+</body>
+</html>
+
+
+
+

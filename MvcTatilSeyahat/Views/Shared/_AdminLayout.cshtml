@@ -1,0 +1,101 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Seyahat & Blog Admin Paneli</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/webadmin/plugins/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/webadmin/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="~/webadmin/plugins/icon-kit/dist/css/iconkit.min.css">
+    <link rel="stylesheet" href="~/webadmin/plugins/ionicons/dist/css/ionicons.min.css">
+    <link rel="stylesheet" href="~/webadmin/plugins/perfect-scrollbar/css/perfect-scrollbar.css">
+    <link rel="stylesheet" href="~/webadmin/plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/webadmin/plugins/jvectormap/jquery-jvectormap.css">
+    <link rel="stylesheet" href="~/webadmin/plugins/tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet" href="~/webadmin/plugins/weather-icons/css/weather-icons.min.css">
+    <link rel="stylesheet" href="~/webadmin/plugins/c3/c3.min.css">
+    <link rel="stylesheet" href="~/webadmin/plugins/owl.carousel/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/webadmin/plugins/owl.carousel/dist/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/webadmin/dist/css/theme.min.css">
+    <script src="~/webadmin/src/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper" style="margin-top:-60px;">
+        <div class="page-wrap">
+            <div class="app-sidebar colored">
+                <div class="sidebar-header">
+                    <a class="header-brand">
+                        <span class="text">Admin Paneli</span>
+                    </a>
+                </div>
+                <div class="sidebar-content">
+                    <div class="nav-container">
+                        <nav id="main-menu-navigation" class="navigation-main">
+                            <div class="nav-lavel">Menüler</div>
+                            <div class="nav-item active">
+                                <a href="/Admin/Index/"><i class="fas fa-plane"></i><span>Bloglar</span></a>
+                            </div>
+                            <div class="nav-item">
+                                <a href="/Admin/YorumListesi/"><i class="far fa-comment"></i><span>Yorumlar</span></a>
+                            </div>
+                            <div class="nav-item">
+                                <a href="/Admin/Iletisim"><i class="fas fa-phone"></i><span>İletişim</span></a>
+                            </div>
+                            <div class="nav-item">
+                                <a href="/Admin/Hakkimizda"><i class="fa fa-info-circle"></i><span>Hakkımızda</span></a>
+                            </div>
+                            <div class="nav-item">
+                                <a href="/Default/Index"><i class="fa fa-reply-all"></i><span>Web Sitesine Dön</span></a>
+                            </div>
+                            <div class="nav-item">
+                                <a href="/Login/LogOut"><i class="fa fa-ban"></i><span>Çıkış Yap</span></a>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="src/js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+    <script src="~/webadmin/plugins/popper.js/dist/umd/popper.min.js"></script>
+    <script src="~/webadmin/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/webadmin/plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+    <script src="~/webadmin/plugins/screenfull/dist/screenfull.js"></script>
+    <script src="~/webadmin/plugins/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="~/webadmin/plugins/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/webadmin/plugins/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="~/webadmin/plugins/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+    <script src="~/webadmin/plugins/jvectormap/jquery-jvectormap.min.js"></script>
+    <script src="~/webadmin/plugins/jvectormap/tests/assets/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="~/webadmin/plugins/moment/moment.js"></script>
+    <script src="~/webadmin/plugins/tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="~/webadmin/plugins/d3/dist/d3.min.js"></script>
+    <script src="~/webadmin/plugins/c3/c3.min.js"></script>
+    <script src="~/webadmin/js/tables.js"></script>
+    <script src="~/webadmin/js/widgets.js"></script>
+    <script src="~/webadmin/js/charts.js"></script>
+    <script src="~/webadmin/dist/js/theme.min.js"></script>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+</body>
+</html>
+

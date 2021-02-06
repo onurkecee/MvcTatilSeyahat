@@ -1,0 +1,27 @@
+﻿@model MvcTatilSeyahat.Models.Sınıflar.Blog
+
+@{
+    ViewBag.Title = "BlogGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("BlogGuncelle", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.HiddenFor(x => x.ID)
+    @Html.Label("BAŞLIK")
+    @Html.TextBoxFor(x => x.BASLIK, new { @class = "form-control" })
+    <br />
+    @Html.Label("TARİH")
+    @Html.TextBoxFor(x => x.TARIH, new { @class = "form-control" })
+    <br />
+    @Html.Label("BLOG RESİM")<br />
+    @Html.TextBoxFor(x => x.BLOGIMAGE, new { @class = "form-control", @readonly = "readonly" })
+    <input type="file" name="BLOGIMAGE" id="@ViewBag.resimad" />
+    <br />
+    <br />
+    @Html.Label("BLOG YAZISI")
+    @Html.TextAreaFor(x => x.ACIKLAMA, new { @class = "form-control", @style = "height:150px" })
+    <br />
+    <button class="btn btn-primary">Blog Güncelle</button>
+}
+

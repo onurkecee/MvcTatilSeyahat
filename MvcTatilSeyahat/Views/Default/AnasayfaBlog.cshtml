@@ -1,0 +1,21 @@
+﻿@using MvcTatilSeyahat.Models.Sınıflar
+@model List<Blog>
+
+
+<div class="con-bot">
+    @foreach (var x in Model)
+    {
+        <div class="left" style="width:29%; float:left">
+            <div class="bot-left">
+                <img src="@x.BLOGIMAGE" alt="" style="width:276px; height:150px;"/>
+            </div>
+            <div class="left-text">
+                <h4>@x.BASLIK</h4>
+                <span class="doller">@x.TARIH.ToShortDateString()</span>
+                <p>@x.ACIKLAMA.Substring(0,120)</p>
+                <p><a href="/Blog/BlogDetay/@x.ID"><span class="read">Devamını Oku >></span></a></p>
+            </div>
+        </div>
+    }
+   <div class="clear"></div>
+</div>

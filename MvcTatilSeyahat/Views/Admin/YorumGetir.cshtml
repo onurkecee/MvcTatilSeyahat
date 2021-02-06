@@ -1,0 +1,21 @@
+﻿@model MvcTatilSeyahat.Models.Sınıflar.Yorum
+@{
+    ViewBag.Title = "YorumGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("YorumGuncelle", "Admin", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.ID)
+    @Html.Label("KULLANICI ADI")
+    @Html.TextBoxFor(x => x.KULLANICIADI, new { @class = "form-control" })
+    <br />
+    @Html.Label("MAİL")
+    @Html.TextBoxFor(x => x.MAIL, new { @class = "form-control" })
+    <br />
+    @Html.Label("YORUM")
+    @Html.TextBoxFor(x => x.YORUM, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Yorum Güncelle</button>
+}
+

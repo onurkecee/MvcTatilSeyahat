@@ -1,0 +1,31 @@
+﻿@using MvcTatilSeyahat.Models.Sınıflar
+@model List<Blog>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>BAŞLIK</th>
+        <th>TARİH</th>
+        <th>İŞLEMLER</th>
+    </tr>
+
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.BASLIK</td>
+            <td>@x.TARIH.ToShortDateString()</td>
+            <td>
+                <a href="/Admin/BlogSil/@x.ID" class="btn btn-danger" title="Sil"><div class="fa fa-times"></div></a>
+                <a href="/Admin/BlogGetir/@x.ID" class="btn btn-warning" title="Güncelle"><div class="fa fa-recycle"></div></a>
+                <a href="/Blog/BlogDetay/@x.ID" class="btn btn-dark" title="Blog Detay"><div class="fa fa-book"></div></a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Admin/YeniBlog/" class="btn btn-primary"><div class="fa fa-edit"></div> Yeni Blog</a>

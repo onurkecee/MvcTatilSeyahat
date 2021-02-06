@@ -1,0 +1,76 @@
+﻿@using MvcTatilSeyahat.Models.Sınıflar
+@model List<Harika>
+@{
+    ViewBag.Title = "DogalHarikaDetay";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+@{
+    ViewBag.Title = "YeniHarikaDetay";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Antik Dünya'nın Yedi Harikası</title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="~/webharika/assets/img/favicon.png" rel="icon">
+    <link href="~/webharika/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,500,500i,600,600i,700,700i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/webharika/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/webharika/assets/vendor/hover/hover.min.css" rel="stylesheet">
+    <link href="~/webharika/assets/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="~/webharika/assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="~/webharika/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="~/webharika/assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <main id="main">
+        <!-- ======= Blog Single ======= -->
+        <div class="main-content paddsection">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="row">
+                            <div class="container-main single-main">
+                                <div class="col-md-12">
+                                    <div class="block-main mb-30">
+                                        @foreach (var x in Model)
+                                        {
+                                            <img src="@x.IMAGE" class="img-responsive" alt="reviews2">
+                                            <div class="content-main single-post padDiv">
+                                                <div class="journal-txt">
+                                                    <h4><a>@x.BASLIK</a></h4>
+                                                </div>
+                                                <div style="text-align:justify">
+                                                    <p class="mb-30">
+                                                        @x.ACIKLAMA
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+

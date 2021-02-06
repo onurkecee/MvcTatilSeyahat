@@ -1,0 +1,38 @@
+﻿@using MvcTatilSeyahat.Models.Sınıflar
+@model List<Blog>
+
+<div class="padding1">
+    <h4>Tavsiye Ettiğim Yerler</h4>
+    <div class="box-left">
+        @foreach (var x in Model)
+        {
+            if (x.ID <= 4)
+            {
+                <div class="bot-img">
+                    <a href="/Blog/BlogDetay/@x.ID"> <img src="@x.BLOGIMAGE" alt="" style="width:120px; height:80px;" /></a>
+                </div>
+                <div class="bot-desc">
+                    <p>@x.ACIKLAMA.Substring(0, 80) </p>
+                </div>
+                <div class="clear"></div>
+            }
+
+        }
+    </div>
+    @foreach (var y in Model)
+    {
+        if (y.ID >= 5 && y.ID <= 7)
+        {
+            <div class="box1-left">
+                <div class="bot-img">
+                    <a href="/Blog/BlogDetay/@y.ID"> <img src="@y.BLOGIMAGE" alt="" style="width:120px; height:80px;" /></a>
+                </div>
+                <div class="bot-desc1">
+                    <p>@y.ACIKLAMA.Substring(0, 80) </p>
+                </div>
+                <div class="clear"></div>
+            </div>
+        }
+
+    }
+</div>

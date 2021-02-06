@@ -1,0 +1,13 @@
+﻿@using MvcTatilSeyahat.Models.Sınıflar
+@model List<Yorum>
+
+<div class="comments">
+    <h3>Son Yorumlar</h3>
+    <ul>
+        @foreach (var x in Model)
+        {
+            <li><a href="#">@x.KULLANICIADI </a> - <a href="/Blog/BlogDetay/@x.BLOG.ID">@x.BLOG.BASLIK</a></li>
+        }
+
+    </ul>
+</div>
