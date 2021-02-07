@@ -15,6 +15,6 @@ namespace MvcTatilSeyahat.Models.Sınıflar
         public DbSet<Iletisim> Iletisims { get; set; }
         public DbSet<Yorum> Yorums { get; set; }
         public DbSet<Harika> Harikas { get; set; }
-       
+        public DbSet<Uye> Uyes { get; set; }
     }
 }
