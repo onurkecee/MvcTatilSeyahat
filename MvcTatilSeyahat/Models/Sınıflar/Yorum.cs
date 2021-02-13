@@ -14,6 +14,7 @@ namespace MvcTatilSeyahat.Models.Sınıflar
         public string MAIL { get; set; }
         public string YORUM { get; set; }
         public int BLOGID { get; set; }
+        public bool YORUMONAY { get; set; }
         public virtual Blog BLOG { get; set; }
     }
 }

@@ -93,15 +93,22 @@ namespace MvcTatilSeyahat.Controllers
         public ActionResult YorumGetir(int id)
         {
             var yorumgetir = c.Yorums.Find(id);
+            List<SelectListItem> yorumonay = new List<SelectListItem>();
+            foreach (var item in c.Yorums.ToList())
+            {
+                yorumonay.Add(new SelectListItem { Text = item.YORUMONAY.ToString(), Value = item.ID.ToString() });
+            }
+            ViewBag.yorumonay = yorumonay;
             return View("YorumGetir", yorumgetir);
         }
 
-        public ActionResult YorumGuncelle(Yorum p)
+        public ActionResult YorumDetay(Yorum p)
         {
             var yorumguncelle = c.Yorums.Find(p.ID);
             yorumguncelle.KULLANICIADI = p.KULLANICIADI;
             yorumguncelle.MAIL = p.MAIL;
             yorumguncelle.YORUM = p.YORUM;
+            yorumguncelle.YORUMONAY = p.YORUMONAY;
             c.SaveChanges();
             return RedirectToAction("YorumListesi");
         }

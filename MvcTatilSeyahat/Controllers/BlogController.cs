@@ -25,9 +25,9 @@ namespace MvcTatilSeyahat.Controllers
         public ActionResult BlogDetay(int id)
         {
             by.blog = c.Blogs.Where(x => x.ID == id).ToList();
-            by.yorum = c.Yorums.Where(x => x.BLOGID == id).ToList();
+            by.yorum = c.Yorums.Where(x => x.BLOGID == id && x.YORUMONAY == true).ToList();
             by.sonyazilar = c.Blogs.OrderByDescending(x => x.ID).Take(3).ToList();
-            by.sonyorum = c.Yorums.OrderByDescending(x => x.ID).Take(3).ToList();
+            by.sonyorum = c.Yorums.Where(x => x.YORUMONAY == true).OrderByDescending(x => x.ID).Take(3).ToList();
             // var blogdetay = c.Blogs.Where(x => x.ID == id).ToList();
             return View(by);
         }
@@ -43,13 +43,14 @@ namespace MvcTatilSeyahat.Controllers
         public PartialViewResult YorumYap(Yorum p)
         {
             c.Yorums.Add(p);
+            p.YORUMONAY = false;
             c.SaveChanges();
             return PartialView();
         }
 
         public PartialViewResult SonYorumlar()
         {
-            var sonyorum = c.Yorums.OrderByDescending(x => x.ID).Take(3).ToList();
+            var sonyorum = c.Yorums.Where(x => x.YORUMONAY == true).OrderByDescending(x => x.ID).Take(3).ToList();
             return PartialView(sonyorum);
         }
 
